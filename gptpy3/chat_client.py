@@ -3,8 +3,8 @@ import socket
 import sys
 import signal
 import argparse
-from gptpy2.chatgpt import ChatGPT
-from gptpy2.utils import *
+from gptpy3.chatgpt import ChatGPT
+from gptpy3.utils import *
 
 
 class ChatClient:
