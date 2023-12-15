@@ -1,5 +1,5 @@
 # gptpy3
-gptpy3 is an efficient socket client that connects to a gptpy2 server within a Python 3 environment. It is designed to receive messages from the gptpy2 server, interact with the ChatGPT API, and relay ChatGPT's responses back to the gptpy2 server. To operate the gptpy3 client, an OpenAI API key is required.
+gptpy3 is an efficient socket client that connects to a [gptpy2 server](https://github.com/jlim262/gptpy2) within a Python 3 environment. It is designed to receive messages from the gptpy2 server, interact with the ChatGPT API, and relay ChatGPT's responses back to the gptpy2 server. To operate the gptpy3 client, an OpenAI API key is required.
 
 ## Prerequisites
 Ensure you have Python 3.8 installed on your machine before proceeding.
