@@ -17,16 +17,21 @@ class ChatGPT(object):
             api_key=api_key,
         )
 
-        # openai.aiosession.set(ClientSession())
         self.model = model
         self.temperature = temperature
         self.chat_history = []
         self.delay_in_seconds = 0.1
         self.robot_name = robot_name
-        # self.set_instruction(instruction)
         self.instruction = instruction
+        self.assistant = self.create_assistant("Robot Assistant")
 
-        self.assistant = self.client.beta.assistants.create(
+    def create_assistant(self, name):
+        assistants = self.client.beta.assistants.list()        
+        for assistant in assistants:
+            if assistant.name.lower() == name.lower():
+                return self.client.beta.assistants.retrieve(assistant.id)
+
+        return self.client.beta.assistants.create(
             name="Robot Assistant",
             instructions="You are a versatile robotic assistant designed for various tasks in the University of Auckland. Deliver a concise response in a single sentence.",
             tools=[{"type": "code_interpreter"}],
